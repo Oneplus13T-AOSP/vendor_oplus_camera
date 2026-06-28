@@ -46,6 +46,9 @@ PRODUCT_PRODUCT_PROPERTIES += \
     persist.logd.log.load.vendor.qti.camera.provider-service_64.threshold=400000 \
     persist.logd.log.load.vendor.qti.camera.provider-service_64.upper_limit=1500 \
 
+# Camera
+$(call soong_config_set,camera,target_ships_oplus_cam,true)
+
 # Photo
 $(call soong_config_set,camera,package_name,com.oplus.packageName)
 $(call soong_config_set,camera,allow_nonincreasing_timestamps,true)
