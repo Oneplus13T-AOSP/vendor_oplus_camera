@@ -48,6 +48,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # Camera
 $(call soong_config_set,camera,target_ships_oplus_cam,true)
+$(call soong_config_set,libgui,num_buffer_slots,96)
 
 # Photo
 $(call soong_config_set,camera,package_name,com.oplus.packageName)
