@@ -289,3 +289,8 @@ system_ext/lib64/libcsextimpl.so
 
 # Oplus Camera Services & AI (OSense)
 vendor/lib64/vendor.oplus.hardware.cammidasservice@1.0.so
+
+
+odm/lib64/libsdk_sr.so
+odm/lib64/libsdk_sr_ref.so
+odm/lib64/libportrait_repair_qnn.so
