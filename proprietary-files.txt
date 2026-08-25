@@ -293,3 +293,5 @@ vendor/lib64/vendor.oplus.hardware.cammidasservice@1.0.so
 odm/lib64/libsdk_sr.so
 odm/lib64/libsdk_sr_ref.so
 odm/lib64/libportrait_repair_qnn.so
+
+system/lib64/libbase.so:system_ext/lib64/libbase-stock.so;FIX_SONAME
