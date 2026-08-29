@@ -1,0 +1,2 @@
+# CameraService OPlus scheduling
+allow cameraserver opluscamera_app:process setsched;

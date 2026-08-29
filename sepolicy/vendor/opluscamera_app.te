@@ -1,6 +1,7 @@
 app_domain(opluscamera_app)
 net_domain(opluscamera_app)
 
+allow opluscamera_app adsprpcd_file:file r_file_perms;
 allow opluscamera_app adsprpcd_file:dir r_dir_perms;
 allow opluscamera_app public_adsprpcd_file:file r_file_perms;
 
@@ -56,6 +57,7 @@ allow opluscamera_app shell_data_file:dir search;
 # APS (Advanced Photo System) inspects cgroup v2 while setting up DSP/CPU
 # scheduling.
 allow opluscamera_app cgroup_v2:dir search;
+allow opluscamera_app cgroup:dir search;
 
 binder_use(opluscamera_app)
 binder_call(opluscamera_app, system_server)
