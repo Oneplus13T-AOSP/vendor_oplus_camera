@@ -1,21 +1,20 @@
-From e91e0a9978bf628551228f96c0655f7152d83562 Mon Sep 17 00:00:00 2001
-From: Hecheng Yu <kde-yyds@qq.com>
-Date: Wed, 3 Jun 2026 21:10:21 +0800
+From 9372032bc2cbb8111c47ce096b9181acb92205a0 Mon Sep 17 00:00:00 2001
+From: RobertGarciaa <chae0218@naver.com>
+Date: Sat, 29 Aug 2026 23:39:40 +0900
 Subject: [PATCH 2/4] ActionReceiver: Inject RECEIVER_NOT_EXPORTED when running
- registerReceiver()
 
-E AndroidRuntime: java.lang.SecurityException: com.oneplus.gallery: One of RECEIVER_EXPORTED or RECEIVER_NOT_EXPORTED should be specified when a receiver isn't being registered exclusively for system broadcasts
+Signed-off-by: RobertGarciaa <chae0218@naver.com>
 ---
  .../foundation/uikit/broadcast/bus/ActionReceiver.smali  | 9 +++++++++
  1 file changed, 9 insertions(+)
 
 diff --git a/smali_classes2/com/oplus/gallery/foundation/uikit/broadcast/bus/ActionReceiver.smali b/smali_classes2/com/oplus/gallery/foundation/uikit/broadcast/bus/ActionReceiver.smali
-index e757e3041..5b37caf8d 100644
+index 28c57eb85..b64570901 100644
 --- a/smali_classes2/com/oplus/gallery/foundation/uikit/broadcast/bus/ActionReceiver.smali
 +++ b/smali_classes2/com/oplus/gallery/foundation/uikit/broadcast/bus/ActionReceiver.smali
 @@ -153,6 +153,15 @@
  
-     iget v7, v0, Lcom/oplus/aiunit/vision/yz0;->c:I
+     iget v7, v0, Lcom/oplus/aiunit/vision/zz0;->c:I
  
 +    # --- START PATCH: conditionally add RECEIVER_NOT_EXPORTED (0x4) ---
 +    and-int/lit8 v0, v7, 0x6        # 0x6 = 0x2 | 0x4 (both export flags)
@@ -30,5 +29,5 @@ index e757e3041..5b37caf8d 100644
  
      invoke-virtual/range {v2 .. v7}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;I)Landroid/content/Intent;
 -- 
-2.47.3
+2.55.0
 

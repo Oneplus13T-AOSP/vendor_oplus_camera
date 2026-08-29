@@ -1,14 +1,15 @@
-From 530e918fb67c60833bf4c553c7b7223e73c77d57 Mon Sep 17 00:00:00 2001
-From: Hecheng Yu <kde-yyds@qq.com>
-Date: Fri, 5 Jun 2026 16:07:29 +0800
+From 6462a1803be5071235b31422da0df55b74111361 Mon Sep 17 00:00:00 2001
+From: RobertGarciaa <chae0218@naver.com>
+Date: Sat, 29 Aug 2026 23:51:05 +0900
 Subject: [PATCH 3/4] Add required items under theme PhotoEditor_Theme.Hassel
 
+Signed-off-by: RobertGarciaa <chae0218@naver.com>
 ---
  res/values/styles.xml | 3 +++
  1 file changed, 3 insertions(+)
 
 diff --git a/res/values/styles.xml b/res/values/styles.xml
-index 3ade89780..c4838ca5f 100644
+index 02298921e..ac7219f62 100644
 --- a/res/values/styles.xml
 +++ b/res/values/styles.xml
 @@ -6977,6 +6977,9 @@
@@ -22,5 +23,5 @@ index 3ade89780..c4838ca5f 100644
      <style name="PictureBottomActionBarIcon" parent="@style/EditorRippleAnim">
          <item name="android:layout_width">@dimen/picture3d_bottom_action_bar_icon_size</item>
 -- 
-2.47.3
+2.55.0
 

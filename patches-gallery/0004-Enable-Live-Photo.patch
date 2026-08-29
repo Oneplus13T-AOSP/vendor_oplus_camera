@@ -1,16 +1,17 @@
-From af5178c805c56c1c1703a02682cb692030ae325e Mon Sep 17 00:00:00 2001
-From: Hecheng Yu <kde-yyds@qq.com>
-Date: Wed, 1 Jul 2026 17:01:28 +0800
+From dfb3e1db8d9dbb0938bdd36c9eba6d8d352ea5af Mon Sep 17 00:00:00 2001
+From: RobertGarciaa <chae0218@naver.com>
+Date: Sun, 30 Aug 2026 00:02:22 +0900
 Subject: [PATCH 4/4] Enable Live Photo
 
+Signed-off-by: RobertGarciaa <chae0218@naver.com>
 ---
- smali/com/oplus/aiunit/vision/p5a.smali | 85 ++++++++++++++++++++++++-
+ smali/com/oplus/aiunit/vision/k7a.smali | 85 ++++++++++++++++++++++++-
  1 file changed, 84 insertions(+), 1 deletion(-)
 
-diff --git a/smali/com/oplus/aiunit/vision/p5a.smali b/smali/com/oplus/aiunit/vision/p5a.smali
-index da1994479..f820d6a3e 100644
---- a/smali/com/oplus/aiunit/vision/p5a.smali
-+++ b/smali/com/oplus/aiunit/vision/p5a.smali
+diff --git a/smali/com/oplus/aiunit/vision/k7a.smali b/smali/com/oplus/aiunit/vision/k7a.smali
+index ba0536525..60a4ed0be 100644
+--- a/smali/com/oplus/aiunit/vision/k7a.smali
++++ b/smali/com/oplus/aiunit/vision/k7a.smali
 @@ -118,10 +118,13 @@
  .end method
  
@@ -28,7 +29,7 @@ index da1994479..f820d6a3e 100644
      invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 @@ -214,7 +217,87 @@
  
-     invoke-static {p1, p0, v0, v1}, Lcom/oplus/aiunit/vision/od5;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+     invoke-static {p1, p0, v0, v1}, Lcom/oplus/aiunit/vision/fe5;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
  
 +    # -------------------------------------------------------------
 +    #  Log original result (optional, remove if not needed)
@@ -115,5 +116,5 @@ index da1994479..f820d6a3e 100644
  
  .method public static synthetic d(ILjava/lang/String;Z)Z
 -- 
-2.47.3
+2.55.0
 
