@@ -1,0 +1,2 @@
+# OPlus Gallery binds to the horae performance service
+allow platform_app_all horae:binder { call transfer };
