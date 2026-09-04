@@ -1,0 +1,30 @@
+type occe_create, domain;
+type occe_create_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(occe_create)
+
+# Shader cache under /mnt/occe
+allow occe_create tmpfs:dir {
+    add_name append create getattr ioctl lock map open read remove_name
+    rename rmdir search setattr unlink watch watch_reads write
+};
+
+allow occe_create tmpfs:file {
+    append create getattr ioctl lock map open read rename setattr
+    unlink watch watch_reads write
+};
+
+allow occe_create self:capability sys_admin;
+
+# GPU access for shader compilation
+allow occe_create gpu_device:chr_file {
+    getattr ioctl map open read write
+};
+
+# HwBinder access to the graphics mapper
+allow occe_create hwservicemanager:binder call;
+allow hwservicemanager occe_create:binder transfer;
+allow occe_create hal_graphics_mapper_hwservice:hwservice_manager find;
+get_prop(occe_create, hwservicemanager_prop)
+
+dontaudit occe_create vendor_hal_qspmhal_hwservice:hwservice_manager find;
