@@ -81,3 +81,10 @@ allow opluscamera_app vendor_hal_qspmhal_default:binder { call transfer };
 
 # Allow finding the offline camera service
 # allow opluscamera_app vendor_hal_offlinecamera_service:service_manager find;
+
+# OCCE shader cache under /mnt/occe
+allow opluscamera_app tmpfs:dir {
+    getattr ioctl lock open read search watch watch_reads };
+allow opluscamera_app tmpfs:file { getattr open read write };
+allow opluscamera_app tmpfs:lnk_file {
+    getattr ioctl lock map open read watch watch_reads };
