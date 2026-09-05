@@ -1,0 +1,2 @@
+# The OCCE init action creates its shader cache under /mnt/occe
+allow vendor_init tmpfs:dir create_dir_perms;
