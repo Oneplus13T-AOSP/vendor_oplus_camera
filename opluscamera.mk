@@ -7,8 +7,8 @@ PRODUCT_PACKAGES += \
 #    oplus-framework
 
 # Init
-#PRODUCT_PACKAGES += \
-#    init.oplus.camera.rc
+PRODUCT_COPY_FILES += \
+    vendor/oplus/camera/configs/init/init.oplus.camera.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.oplus.camera.rc
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -20,7 +20,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.vendor.camera.privapp.list=com.oplus.camera \
     ro.com.google.lens.oem_camera_package=com.oplus.camera \
-    ro.com.google.lens.oem_image_package=com.oneplus.gallery \
+    ro.com.google.lens.oem_image_package=com.coloros.gallery3d \
     ro.oplus.camera.defercap.support=1 \
     ro.oplus.system.camera.name=com.oplus.camera \
     ro.oplus.camera.defercap.all.quick.visible.support=1 \

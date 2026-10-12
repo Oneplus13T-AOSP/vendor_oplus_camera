@@ -1,0 +1,8 @@
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+
+# APS storage used by the Oplus camera port.
+on post-fs-data
+    mkdir /data/system/camera_rus 0777 cameraserver cameraserver
+    restorecon_recursive /data/system/camera_rus
+    mkdir /data/vendor/camera_rus 0777 camera camera

@@ -5,116 +5,62 @@ Subject: [PATCH 4/4] Enable Live Photo
 
 Signed-off-by: RobertGarciaa <chae0218@naver.com>
 ---
- smali/com/oplus/aiunit/vision/k7a.smali | 85 ++++++++++++++++++++++++-
- 1 file changed, 84 insertions(+), 1 deletion(-)
+ smali/com/oplus/aiunit/vision/fdb.smali | 43 +++++++++++++++++++++++++++++++++
+ 1 file changed, 43 insertions(+)
 
-diff --git a/smali/com/oplus/aiunit/vision/k7a.smali b/smali/com/oplus/aiunit/vision/k7a.smali
-index ba0536525..60a4ed0be 100644
---- a/smali/com/oplus/aiunit/vision/k7a.smali
-+++ b/smali/com/oplus/aiunit/vision/k7a.smali
-@@ -118,10 +118,13 @@
- .end method
- 
- .method public static final c(Ljava/lang/String;ZZ)Z
--    .locals 3
-+    .locals 4
-     .annotation runtime Lkotlin/jvm/JvmStatic;
-     .end annotation
- 
-+    # Save original key (p0) into v3 before it gets overwritten
-+    move-object v3, p0
-+
-     const-string v0, "configId"
+diff --git a/smali/com/oplus/aiunit/vision/fdb.smali b/smali/com/oplus/aiunit/vision/fdb.smali
+index 833008c..50678b4 100644
+--- a/smali/com/oplus/aiunit/vision/fdb.smali
++++ b/smali/com/oplus/aiunit/vision/fdb.smali
+@@ -126,6 +126,49 @@
  
      invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-@@ -214,7 +217,87 @@
  
-     invoke-static {p1, p0, v0, v1}, Lcom/oplus/aiunit/vision/fe5;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
- 
-+    # -------------------------------------------------------------
-+    #  Log original result (optional, remove if not needed)
-+    # -------------------------------------------------------------
-+    const-string v0, "GalleryHook"
++    # Only override the existing Live Photo feature keys.
 +
-+    new-instance v1, Ljava/lang/StringBuilder;
-+
-+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-+
-+    const-string v2, "c() key="
-+
-+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-+
-+    move-result-object v1
-+
-+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-+
-+    move-result-object v1
-+
-+    const-string v2, " result="
-+
-+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-+
-+    move-result-object v1
-+
-+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-+
-+    move-result-object v1
-+
-+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-+
-+    move-result-object v1
-+
-+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-+
-+    # -------------------------------------------------------------
-+    #  Override for Olive keys (now using if-nez)
-+    # -------------------------------------------------------------
 +    const-string v0, "feature_is_support_olive"
-+    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
++
++    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
++
 +    move-result v1
-+    if-nez v1, :cond_olive_enabled
++
++    if-nez v1, :cond_live_photo_enabled
 +
 +    const-string v0, "feature_is_support_olive_slide_play"
-+    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
++
++    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
++
 +    move-result v1
-+    if-nez v1, :cond_olive_enabled
++
++    if-nez v1, :cond_live_photo_enabled
 +
 +    const-string v0, "feature_is_support_video_extract_olive"
-+    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
++
++    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
++
 +    move-result v1
-+    if-nez v1, :cond_olive_enabled
++
++    if-nez v1, :cond_live_photo_enabled
 +
 +    const-string v0, "feature_olive_slow_motion_recommend_popup_shown"
-+    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
++
++    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
++
 +    move-result v1
-+    if-nez v1, :cond_olive_enabled
 +
-+    # Not an Olive key – return original result
-     return p2
++    if-nez v1, :cond_live_photo_enabled
 +
-+    :cond_olive_enabled
-+    # Override: return true
-+    const-string v0, "GalleryHook"
-+    new-instance v1, Ljava/lang/StringBuilder;
-+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-+    const-string v2, "OVERRIDE: "
-+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-+    move-result-object v1
-+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-+    move-result-object v1
-+    const-string v2, " -> true"
-+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-+    move-result-object v1
-+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-+    move-result-object v1
-+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
++    goto :cond_stock_config
 +
++    :cond_live_photo_enabled
 +    const/4 v0, 0x1
++
 +    return v0
 +
- .end method
++    :cond_stock_config
++
+     sget-object v0, Lcom/oplus/aiunit/vision/flb;->a:Lcom/coloros/gallery3d/app/App;
  
- .method public static synthetic d(ILjava/lang/String;Z)Z
+     const/4 v1, 0x0
 -- 
 2.55.0
-

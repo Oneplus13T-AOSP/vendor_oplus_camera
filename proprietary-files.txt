@@ -1,5 +1,5 @@
 ## All proprietary files from this list, unless pinned and noted otherwise,
-## are from Oneplus 13T (ColorOS 16 PKX110_16.0.10.500(CN01))
+## are from OnePlus 13T (ColorOS 17 PKX110_17.0.0.104(CN01))
 
 # Camera
 my_product/app/OplusCamera/OplusCamera.apk:system_ext/priv-app/OplusCamera/OplusCamera.apk;OVERRIDES=Aperture,Camera2,GoogleCameraGo

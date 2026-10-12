@@ -9,10 +9,10 @@ Signed-off-by: RobertGarciaa <chae0218@naver.com>
  1 file changed, 3 insertions(+)
 
 diff --git a/res/values/styles.xml b/res/values/styles.xml
-index 02298921e..ac7219f62 100644
+index 871a13a..aeab9ba 100644
 --- a/res/values/styles.xml
 +++ b/res/values/styles.xml
-@@ -6977,6 +6977,9 @@
+@@ -7016,6 +7016,9 @@
          <item name="couiColorPrimaryTextOnPopup">@color/coui_color_primary_on_popup_orange_light</item>
          <item name="couiColorSecondary">@color/coui_color_secondary_orange_light</item>
          <item name="videoEditorActionBarDoneTextColorPressed">@color/action_bar_done_text_color_pressed_hassel</item>
@@ -20,8 +20,7 @@ index 02298921e..ac7219f62 100644
 +        <item name="de_toolkit_redo_drawable_m">@drawable/de_toolkit_ic_redo_selector_night_m</item>
 +        <item name="de_toolkit_stroke_size_tint">#ffffffff</item>
      </style>
-     <style name="PictureBottomActionBarIcon" parent="@style/EditorRippleAnim">
-         <item name="android:layout_width">@dimen/picture3d_bottom_action_bar_icon_size</item>
+     <style name="PictureBottomActionBarIcon">
+         <item name="android:background">@null</item>
 -- 
 2.55.0
-

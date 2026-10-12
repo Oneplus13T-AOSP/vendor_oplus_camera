@@ -5,25 +5,23 @@ Subject: [PATCH 1/2] Use default font instead of OPlus specific ones
 
 Signed-off-by: RobertGarciaa <chae0218@naver.com>
 ---
- smali/r7/s3.smali | 293 +---------------------------------------------
- 1 file changed, 3 insertions(+), 290 deletions(-)
+ smali/ia/y3.smali | 295 +-----------------------------------------------------
+ 1 file changed, 3 insertions(+), 292 deletions(-)
 
-diff --git a/smali/r7/s3.smali b/smali/r7/s3.smali
-index 0c46cdad..76cdb615 100644
---- a/smali/r7/s3.smali
-+++ b/smali/r7/s3.smali
-@@ -263,300 +263,13 @@
+diff --git a/smali/ia/y3.smali b/smali/ia/y3.smali
+index fd13140..49d8f2a 100644
+--- a/smali/ia/y3.smali
++++ b/smali/ia/y3.smali
+@@ -269,300 +269,11 @@
  .end method
- 
+
  .method public static a(Landroid/content/Context;)Landroid/graphics/Typeface;
 -    .locals 6
-+    .locals 1
- 
-     .line 1
--    sget-object v0, Lr7/k0;->a:Landroid/graphics/Typeface;
-+    sget-object v0, Landroid/graphics/Typeface;->DEFAULT:Landroid/graphics/Typeface;
- 
-     .line 2
+-
+-    .line 1
+-    sget-object v0, Lia/o0;->a:Landroid/graphics/Typeface;
+-
+-    .line 2
 -    .line 3
 -    if-nez v0, :cond_2
 -
@@ -122,7 +120,7 @@ index 0c46cdad..76cdb615 100644
 -    .line 48
 -    .line 49
 -    :try_start_1
--    sget-boolean v3, Lr7/s3;->q:Z
+-    sget-boolean v3, Lia/y3;->r:Z
 -
 -    .line 50
 -    .line 51
@@ -203,7 +201,7 @@ index 0c46cdad..76cdb615 100644
 -
 -    .line 87
 -    :cond_0
--    sget-boolean p0, Lr7/s3;->q:Z
+-    sget-boolean p0, Lia/y3;->r:Z
 -
 -    .line 88
 -    .line 89
@@ -249,7 +247,7 @@ index 0c46cdad..76cdb615 100644
 -
 -    .line 106
 -    .line 107
--    invoke-static {v0, v1, p0}, Lj8/b;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+-    invoke-static {v0, v1, p0}, Lab/b;->k(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 -    :try_end_2
 -    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_0
 -    .catch Ljava/lang/NoSuchMethodError; {:try_start_2 .. :try_end_2} :catch_0
@@ -295,27 +293,28 @@ index 0c46cdad..76cdb615 100644
 -    move-result-object p0
 -
 -    .line 129
--    invoke-static {v0, p0}, Lj8/b;->h(Ljava/lang/String;Ljava/lang/String;)V
+-    invoke-static {v0, p0}, Lab/b;->j(Ljava/lang/String;Ljava/lang/String;)V
 -
 -    .line 130
 -    .line 131
 -    .line 132
 -    :cond_1
 -    :goto_2
--    sput-object v2, Lr7/k0;->a:Landroid/graphics/Typeface;
--
+-    sput-object v2, Lia/o0;->a:Landroid/graphics/Typeface;
++    .locals 1
+
 -    .line 133
 -    .line 134
 -    :cond_2
--    sget-object p0, Lr7/k0;->a:Landroid/graphics/Typeface;
--
+-    sget-object p0, Lia/o0;->a:Landroid/graphics/Typeface;
++    sget-object v0, Landroid/graphics/Typeface;->DEFAULT:Landroid/graphics/Typeface;
+
 -    .line 135
 -    .line 136
 -    return-object p0
 +    return-object v0
  .end method
- 
+
  .method public static b()Landroid/graphics/Typeface;
 -- 
 2.55.0
-
