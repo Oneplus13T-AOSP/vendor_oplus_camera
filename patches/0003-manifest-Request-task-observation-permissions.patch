@@ -1,0 +1,19 @@
+From: RobertGarciaa <chae0218@naver.com>
+Subject: [PATCH] manifest: Request task observation permissions
+
+Allow the platform-signed camera to query visible tasks and register
+AOSP task listeners for the floating-window scene compatibility bridge.
+
+Signed-off-by: RobertGarciaa <chae0218@naver.com>
+---
+ AndroidManifest.xml | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/AndroidManifest.xml b/AndroidManifest.xml
+--- a/AndroidManifest.xml
++++ b/AndroidManifest.xml
+@@ -3,2 +3,4 @@
+     <compatible-screens/>
++    <uses-permission android:name="android.permission.REAL_GET_TASKS"/>
++    <uses-permission android:name="android.permission.MANAGE_ACTIVITY_TASKS"/>
+     <permission android:name="com.oplus.camera.sandbox.permission.SANDBOX_PROVIDER" android:protectionLevel="signatureOrSystem"/>
