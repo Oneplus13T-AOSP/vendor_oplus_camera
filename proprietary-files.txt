@@ -12,6 +12,7 @@ my_product/lib64/libAncHumanDoubleExposure-jni.so:system_ext/lib64/libAncHumanDo
 my_product/lib64/libAncHumanRetain-jni_v2.so:system_ext/lib64/libAncHumanRetain-jni_v2.so
 my_product/lib64/libAncHumanSegFigureFusion-jni.so:system_ext/lib64/libAncHumanSegFigureFusion-jni.so
 my_product/lib64/libAncHumanVideo-jni.so:system_ext/lib64/libAncHumanVideo-jni.so
+my_product/lib64/libApsAICompositionJni.so:system_ext/lib64/libApsAICompositionJni.so
 my_product/lib64/libApsFaceBeautyPreviewProductJni.so:system_ext/lib64/libApsFaceBeautyPreviewProductJni.so;FIX_SONAME
 my_product/lib64/libAvatarEngineRender.so:system_ext/lib64/libAvatarEngineRender.so
 my_product/lib64/libAvatarEngineRenderNative.so:system_ext/lib64/libAvatarEngineRenderNative.so
@@ -20,6 +21,7 @@ my_product/lib64/libCombineLutJni.so:system_ext/lib64/libCombineLutJni.so
 my_product/lib64/libFileExtender-jni.so:system_ext/lib64/libFileExtender-jni.so
 my_product/lib64/libOplusBlurPreviewJNI.so:system_ext/lib64/libOplusBlurPreviewJNI.so
 my_product/lib64/libOplusStringJNI.so:system_ext/lib64/libOplusStringJNI.so
+my_product/lib64/libPalette-Jni.so:system_ext/lib64/libPalette-Jni.so
 system_ext/lib64/libOplusStringJNI-extension.oplus.so
 system_ext/lib64/libsuperNight.oplus.so
 system_ext/lib64/libAPSClient-cmd-jni-extension.oplus.so;FIX_SONAME
