@@ -14,3 +14,9 @@ ro.oplus.key.actionbutton           u:object_r:vendor_camera_prop:s0
 ro.oplus.flashlight.rio.switch      u:object_r:vendor_camera_prop:s0
 ro.vendor.oplus.market.name         u:object_r:vendor_camera_prop:s0
 ro.vendor.oplus.market.enname       u:object_r:vendor_camera_prop:s0
+
+# Codec2 VPP/tonemapping controls must override the broad vendor.oplus. label.
+# mediacodec already accesses vendor_video_prop through its video policy.
+vendor.oplus.media.vpp.glitch.enable     u:object_r:vendor_video_prop:s0 exact
+vendor.oplus.tonemap.debug.status        u:object_r:vendor_video_prop:s0 exact
+vendor.oplus.tonemap.downscale.output    u:object_r:vendor_video_prop:s0 exact
